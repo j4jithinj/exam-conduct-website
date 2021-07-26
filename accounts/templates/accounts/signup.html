@@ -23,7 +23,8 @@
                     </div>
                     <div class="login-wrapper my-auto">
                         <h1 class="login-title">Signup</h1>
-                        <form action="#!">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" id="email" class="form-control"
@@ -49,7 +50,7 @@
                                 <input type="password" name="password1" id="password1" class="form-control"
                                     placeholder="Confirm passsword">
                             </div>
-                            <input name="login" id="login" class="btn btn-block login-btn" type="button" value="Signup">
+                            <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Signup">
                         </form>
                         <p class="login-wrapper-footer-text">Already have an account? <a href="{% url 'userlogin' %}"
                                 class="text-reset">Login here</a></p>
